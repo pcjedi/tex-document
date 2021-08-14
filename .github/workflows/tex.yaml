@@ -1,1 +1,15 @@
+name: Render Latex PDF
 
+on:
+  worflow_dispatch:
+  
+jobs:
+  tex:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: apt-get install latex
+      - uses: actions/checkout@v2.3.4
+      - run: latex doc.tex
+      - uses: actions/upload-artifact@v2.2.4
+        with:
+          path: doc.pdf
