@@ -8,9 +8,9 @@ jobs:
   tex:
     runs-on: ubuntu-20.04
     steps:
-      - run: sudo apt-get install texlive-base
+      - run: sudo apt-get install texlive texlive-lang-german texlive-latex-extra
       - uses: actions/checkout@v2.3.4
-      - run: tex doc.tex
+      - run: pdflatex doc.tex
       - uses: actions/upload-artifact@v2.2.4
         with:
           path: doc.pdf
