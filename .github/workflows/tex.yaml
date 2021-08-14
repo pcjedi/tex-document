@@ -1,7 +1,7 @@
 name: Render Latex PDF
 
 on:
-  worflow_dispatch:
+  workflow_dispatch:
   
 jobs:
   tex:
