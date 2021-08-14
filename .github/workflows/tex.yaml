@@ -7,7 +7,7 @@ jobs:
   tex:
     runs-on: ubuntu-20.04
     steps:
-      - run: sudo apt-get install latex
+      - run: sudo apt-get install texlive-base
       - uses: actions/checkout@v2.3.4
       - run: latex doc.tex
       - uses: actions/upload-artifact@v2.2.4
