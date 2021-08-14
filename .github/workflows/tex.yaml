@@ -10,7 +10,6 @@ jobs:
     steps:
     - run: sudo apt-get install texlive texlive-lang-german texlive-latex-extra
     - uses: actions/checkout@v2.3.4
-    # - run: sudo apt-get install chktex && chktex doc.tex
     - uses: github/super-linter@v4.6.1
     - run: pdflatex doc.tex
     - run: pdflatex doc.tex
@@ -19,7 +18,7 @@ jobs:
         git config user.name "Automated"
         git config user.email "actions@users.noreply.github.com"
         git add doc.pdf
-        git commit -a --allow-empty-message -m '' || exit 0
+        git commit -m 'update document' || exit 0
         git pull && git push
     - uses: actions/upload-artifact@v2.2.4
       with:
