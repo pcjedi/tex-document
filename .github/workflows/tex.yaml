@@ -8,9 +8,10 @@ jobs:
   tex:
     runs-on: ubuntu-20.04
     steps:
-      - run: sudo apt-get install texlive texlive-lang-german texlive-latex-extra
+      - run: sudo apt-get install texlive texlive-lang-german texlive-latex-extra chktex
       - uses: actions/checkout@v2.3.4
-      - uses: github/super-linter@v4.6.1
+      # - uses: github/super-linter@v4.6.1
+      - run: chktex doc.tex
       - run: pdflatex doc.tex
       - run: pdflatex doc.tex
       - uses: actions/upload-artifact@v2.2.4
