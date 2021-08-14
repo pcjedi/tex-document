@@ -11,6 +11,7 @@ jobs:
       - run: sudo apt-get install texlive texlive-lang-german texlive-latex-extra
       - uses: actions/checkout@v2.3.4
       - run: pdflatex doc.tex
+      - run: pdflatex doc.tex
       - uses: actions/upload-artifact@v2.2.4
         with:
           path: doc.pdf
